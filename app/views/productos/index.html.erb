@@ -1,0 +1,30 @@
+<!-- app/views/productos/index.html.erb -->
+
+<h1>Listado de Productos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @productos.each do |producto| %>
+      <tr>
+        <td><%= producto.nombre %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= number_to_currency(producto.precio) %></td>
+        <td>
+          <%= link_to 'Mostrar', producto %>
+          <%= link_to 'Editar', edit_producto_path(producto) %>
+          <%= link_to 'Eliminar', producto, method: :delete, data: { confirm: '¿Estás seguro?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nuevo Producto', new_producto_path %>

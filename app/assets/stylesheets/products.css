@@ -1,0 +1,10 @@
+/* Estilo para un encabezado h1 específico */
+h1#titulo {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Estilo para elementos con la clase "destacado" */
+.destacado {
+  background-color: rgb(185, 141, 255);
+}
